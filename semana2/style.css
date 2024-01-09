@@ -59,8 +59,9 @@ body {
 }
 .card-container{
     display: flex;
-    justify-content:center;
+   
      /*
+     justify-content:center;
      flex-direction: row;
     flex-direction: column ; 
     flex-direction: column-reverse;
@@ -98,4 +99,11 @@ body {
 .icon-text p {
     font-size: var(--sm);
     margin: 0;
+}
+@media (max-width: 720px) {
+    .icons-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 50px 10px 50px 10px;
+
+    }
 }
