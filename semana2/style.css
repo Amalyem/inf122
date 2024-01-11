@@ -78,8 +78,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
     justify-items: start;
     margin: 0% 10% 0% 10%;
-}
 
+}
 .card-container {
     display: flex;
     align-items: center;
