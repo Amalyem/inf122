@@ -82,4 +82,27 @@ body{
     margin: 0;
 }
 
- 
+@media (max-width: 720px) {
+
+    .brochure {
+        justify-items: start;
+
+    }
+
+    .title {
+        text-align: start;
+    }
+
+    .subtitle {
+        display: none;
+    }
+
+    .primary-button {
+        align-self: flex-start;
+        margin-top: 0;
+    }
+
+    .icons-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
