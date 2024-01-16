@@ -3,13 +3,11 @@ import './App.css';
 import Evento from './components/Evento';
 import EventoB from './components/EventoB';
 import EventoC from './components/EventoC';
- 
 
 function App() {
   return (
     <div className="App">
       <Evento/>
-       
       <EventoB  title="Py Pizza 03 - PyPuzzle"
         image="pypizza"
         dateLiteral="09 de Diciembre de 2023 - 13:30 GMT-4"
@@ -22,9 +20,18 @@ function App() {
         ¡Anímate a ser parte de esta actividad!
         "
         />
-        <EventoC/>
-       
-    
+        <EventoC title="MeetUp 11 - 3 Pitfalls de la Ingeniería de datos (donde no meter la pata)"
+        image="pypizza"
+        dateLiteral="25 de Noviembre de 2023"
+        placeLiteral="Online"
+        description={[
+          "¡Hola Pythonista!",
+          "Acompáñanos al MeetUp mensual de la comunidad Python La Paz",
+          "En este MeetUp tendremos la participación de Valery Calderon Briz, Ingeniera en Telecomunicaciones actualmente trabajando como Ingeniera de datos Senior en One.Five",
+          "Anteriormente Co-organizadora de Pyladies MX y Líder de la comunidad Python Guatemala",
+          "ha impartido conferencias y talleres en diversas PyCon en múltiples países.",
+        ]}
+      />
     </div>
   );
 }
