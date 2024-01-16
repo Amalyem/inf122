@@ -1,5 +1,5 @@
 import Cuadro from "./Cuadro";  
-import '../styles/Tablero.css'
+import '../styles/Tablero.css';
 import { useState } from "react";
 function Tablero(){
     const [cuadros, setCuadros] = useState(Array(9).fill(null));
@@ -8,36 +8,15 @@ function Tablero(){
         console.log(i);
         console.log("turno : ", jugador);
         const cuadrosTemp = [...cuadros];
-        cuadrosTemp[i] = jugador;
-        setCuadros(cuadrosTemp);
-        console.log(cuadrosTemp);
-        setJugador(jugador === "X"? "O":"X");
-         
+        if(cuadrosTemp[i]===null){
+            cuadrosTemp[i] = jugador;
+            setCuadros(cuadrosTemp);
+            console.log(cuadrosTemp);
+            setJugador (jugador === "X"? "O":"X");
+        }    
 
     }
-    /*
-    const click = (i) => {
-        const cuadrosTemp = [...cuadros];
-        cuadrosTemp[i] = jugador;
-        setCuadros(cuadrosTemp);
-        if (jugador === "X") {
-            setJugador("O");
-        } else {
-            setJugador("X");
-        }
-    }*/
-
-    /*
-    const [valor, setValor]=useState("X");
-    const click = ()=>{
-        if(valor=== "X")
-         setValor( "O"  )
-        else{
-            
-         setValor("X")
-        }
-         setValor("X":"O":"X")
-    }*/
+    
     return(
         <div className='juego'>
              <h1>Siguiente Jugador: {jugador} </h1>
@@ -52,6 +31,7 @@ function Tablero(){
                  <Cuadro valor={cuadros[7]} funcion={() => click(7)} />
                  <Cuadro valor={cuadros[8]} funcion={() => click(8)} />
         </div>
+
     </div>
         
         
