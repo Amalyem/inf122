@@ -1,42 +1,46 @@
-import Cuadro from "./Cuadro";  
+import React from 'react';
 import '../styles/Tablero.css';
-import { useState } from "react";
-function Tablero(){
+import Cuadro from './Cuadro';
+ 
+function Tablero({cuadros,onClick}){
+     
+    function renderizarCuadro(i){
+        return(
+            <Cuadro
+            valor={cuadros[i]}
+            funcion={()=>onClick(i)}
+            />
+        );
+    } /*
     const [cuadros, setCuadros] = useState(Array(9).fill(null));
-    const [jugador, setJugador] = useState("O");
+    const [jugador, setJugador] = useState("X");
     const click = (i) => {
-        console.log(i);
-        console.log("turno : ", jugador);
         const cuadrosTemp = [...cuadros];
-        if(cuadrosTemp[i]===null){
+        if (cuadrosTemp[i] === null) {
             cuadrosTemp[i] = jugador;
             setCuadros(cuadrosTemp);
-            console.log(cuadrosTemp);
-            setJugador (jugador === "X"? "O":"X");
-        }    
-
-    }
-    
-    return(
-        <div className='juego'>
-             <h1>Siguiente Jugador: {jugador} </h1>
-              <div className="tablero">
-                 <Cuadro valor={cuadros[0]} funcion={() => click(0)} />
-                 <Cuadro valor={cuadros[1]} funcion={() => click(1)} />
-                 <Cuadro valor={cuadros[2]} funcion={() => click(2)} />
-                 <Cuadro valor={cuadros[3]} funcion={() => click(3)} />
-                 <Cuadro valor={cuadros[4]} funcion={() => click(4)} />
-                 <Cuadro valor={cuadros[5]} funcion={() => click(5)} />
-                 <Cuadro valor={cuadros[6]} funcion={() => click(6)} />
-                 <Cuadro valor={cuadros[7]} funcion={() => click(7)} />
-                 <Cuadro valor={cuadros[8]} funcion={() => click(8)} />
+            setJugador(jugador === "X" ? "O" : "X");
+        }
+        if (calcularGanador(cuadrosTemp) !== null) {
+            alert("Ganador: " + calcularGanador(cuadrosTemp));
+            setCuadros(Array(9).fill(null));
+        }
+    }*/
+    return (
+        <div >
+            <div className="tablero">
+                {renderizarCuadro(0)}
+                {renderizarCuadro(1)}
+                {renderizarCuadro(2)}
+                {renderizarCuadro(3)}
+                {renderizarCuadro(4)}
+                {renderizarCuadro(5)}
+                {renderizarCuadro(6)}
+                {renderizarCuadro(7)}
+                {renderizarCuadro(8)}
+            </div>
         </div>
-
-    </div>
-        
-        
-        
-        
     );
+   
 }
 export default Tablero;

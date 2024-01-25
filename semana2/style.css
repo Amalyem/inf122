@@ -84,13 +84,14 @@ body {
     display: flex;
     align-items: center;
     margin: 16px 10% 16px 10%;
+    background-color: aqua;
 }
 
 .card-icon {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--blue-heart);
     display: flex;
     justify-content: center;
     align-items: center;
