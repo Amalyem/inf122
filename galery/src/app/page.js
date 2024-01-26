@@ -6,6 +6,10 @@ export default function Home() {
     <div className={styles.main}>
       <Foto />
       <Foto/>
+      <Foto />
+      <Foto/>
+      <Foto />
+      <Foto/>
     </div>
   );
 }
